@@ -1,0 +1,33 @@
+---
+
+HUB: 
+    hostname: 192.168.179.130
+    groups:
+        - cisco_group
+    data:
+        domain:  ipvzero
+        dmvpn: yes 
+
+SPOKE1: 
+    hostname: 192.168.179.131
+    groups:
+        - cisco_group
+    data:
+        domain:  ipvzero
+        dmvpn: yes
+
+SPOKE2: 
+    hostname: 192.168.179.132
+    groups:
+        - cisco_group
+    data:
+        domain:  ipvzero
+        dmvpn: yes
+
+SPOKE3: 
+    hostname: 192.168.179.133
+    groups:
+        - cisco_group
+    data:
+        domain:  ipvzero
+        dmvpn: yes

@@ -1,0 +1,149 @@
+Building configuration...
+
+
+Current configuration : 2036 bytes
+!
+! Last configuration change at 04:38:37 UTC Mon Mar 6 2023 by ray
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition MGMT
+ !
+ address-family ipv4
+ exit-address-family
+!
+no logging console
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name cisco.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+archive
+ path flash:archive
+ write-memory
+file prompt quiet
+username ray privilege 15 secret 9 $9$w7OCngQoWVwcvP$g053y4L.UpFgd4b9arqO4dVIncj5RA4PcD0FZDreB2g
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback77
+ ip address 77.77.77.77 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 192.168.179.130 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 192.168.10.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 192.168.9.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 192.168.8.1 255.255.255.0
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ router-id 1.1.1.1
+ redistribute connected subnets
+ redistribute eigrp 43 subnets
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.0.0.0 0.0.0.0 area 1
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip ssh version 2
+ip scp server enable
+!
+ip access-list extended ACL1
+ permit ip host 1.1.1.1 host 8.8.8.8
+ deny   icmp any any
+ip access-list extended ACL2
+ permit tcp host 1.2.3.4 any eq 22
+ permit icmp host 2.3.4.5 any
+ deny   ip any any
+!
+ipv6 ioam timestamp
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login local
+ transport input ssh
+!
+no scheduler allocate
+ntp server 1.1.1.1 prefer
+ntp server 2.2.2.2
+ntp server 77.77.77.77
+!
+end

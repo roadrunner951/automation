@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /home/ipvzero/Nornir/.venv/bin/activate
+cd /home/ipvzero/Nornir/Backups
+python3 run2-backup-dir-structure.py
