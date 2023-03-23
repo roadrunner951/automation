@@ -1,0 +1,95 @@
+{
+  "_exclude": [
+    "in_requests_pkts",
+    "in_replies_pkts",
+    "in_requests_pkts",
+    "out_replies_pkts",
+    "out_requests_pkts",
+    "in_drops",
+    "in_replies_pkts",
+    "out_requests_pkts",
+    "out_total"
+  ],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "interfaces": {
+      "GigabitEthernet0/0": {
+        "arp_dynamic_learning": {
+          "local_proxy_enable": false,
+          "proxy_enable": true
+        },
+        "ipv4": {
+          "neighbors": {
+            "192.168.179.130": {
+              "ip": "192.168.179.130",
+              "link_layer_address": "5000.0001.0000",
+              "origin": "static"
+            },
+            "192.168.179.138": {
+              "ip": "192.168.179.138",
+              "link_layer_address": "000c.29be.114c",
+              "origin": "dynamic"
+            }
+          }
+        }
+      },
+      "GigabitEthernet0/1": {
+        "arp_dynamic_learning": {
+          "local_proxy_enable": false,
+          "proxy_enable": true
+        },
+        "ipv4": {
+          "neighbors": {
+            "192.168.10.1": {
+              "ip": "192.168.10.1",
+              "link_layer_address": "5000.0001.0001",
+              "origin": "static"
+            },
+            "192.168.10.3": {
+              "ip": "192.168.10.3",
+              "link_layer_address": "5000.0003.0001",
+              "origin": "dynamic"
+            }
+          }
+        }
+      },
+      "GigabitEthernet0/2": {
+        "arp_dynamic_learning": {
+          "local_proxy_enable": false,
+          "proxy_enable": true
+        }
+      },
+      "GigabitEthernet0/3": {
+        "arp_dynamic_learning": {
+          "local_proxy_enable": false,
+          "proxy_enable": true
+        },
+        "ipv4": {
+          "neighbors": {
+            "192.168.8.1": {
+              "ip": "192.168.8.1",
+              "link_layer_address": "5000.0001.0003",
+              "origin": "static"
+            },
+            "192.168.8.5": {
+              "ip": "192.168.8.5",
+              "link_layer_address": "5000.0004.0001",
+              "origin": "dynamic"
+            }
+          }
+        }
+      }
+    },
+    "statistics": {
+      "in_drops": 0,
+      "in_replies_pkts": 90,
+      "in_requests_pkts": 491,
+      "out_replies_pkts": 100,
+      "out_requests_pkts": 30
+    }
+  },
+  "raw_data": false
+}

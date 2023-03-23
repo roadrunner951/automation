@@ -1,0 +1,375 @@
+{
+  "_exclude": [
+    "in_discards",
+    "in_octets",
+    "in_pkts",
+    "last_clear",
+    "out_octets",
+    "out_pkts",
+    "in_rate",
+    "out_rate",
+    "in_errors",
+    "in_crc_errors",
+    "in_rate_pkts",
+    "out_rate_pkts",
+    "in_broadcast_pkts",
+    "out_broadcast_pkts",
+    "in_multicast_pkts",
+    "out_multicast_pkts",
+    "in_unicast_pkts",
+    "out_unicast_pkts",
+    "last_change",
+    "mac_address",
+    "phys_address",
+    "((t|T)unnel.*)",
+    "(Null.*)",
+    "chars_out",
+    "chars_in",
+    "pkts_out",
+    "pkts_in",
+    "mgmt0"
+  ],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "GigabitEthernet0/0": {
+      "accounting": {
+        "arp": {
+          "chars_in": 32940,
+          "chars_out": 4980,
+          "pkts_in": 549,
+          "pkts_out": 83
+        },
+        "cdp": {
+          "chars_in": 781830,
+          "chars_out": 914871,
+          "pkts_in": 2190,
+          "pkts_out": 2205
+        },
+        "dec mop": {
+          "chars_in": 0,
+          "chars_out": 15323,
+          "pkts_in": 0,
+          "pkts_out": 199
+        },
+        "ip": {
+          "chars_in": 680669,
+          "chars_out": 1171575,
+          "pkts_in": 7737,
+          "pkts_out": 8150
+        },
+        "other": {
+          "chars_in": 188928,
+          "chars_out": 712260,
+          "pkts_in": 3936,
+          "pkts_out": 11871
+        }
+      },
+      "auto_negotiate": true,
+      "bandwidth": 1000000,
+      "counters": {
+        "in_broadcast_pkts": 1069,
+        "in_crc_errors": 0,
+        "in_errors": 0,
+        "in_mac_pause_frames": 0,
+        "in_multicast_pkts": 0,
+        "in_octets": 1682569,
+        "in_pkts": 14375,
+        "last_clear": "never",
+        "out_errors": 0,
+        "out_mac_pause_frames": 0,
+        "out_octets": 2809521,
+        "out_pkts": 22469,
+        "rate": {
+          "in_rate": 7000,
+          "in_rate_pkts": 9,
+          "load_interval": 300,
+          "out_rate": 9000,
+          "out_rate_pkts": 9
+        }
+      },
+      "delay": 10,
+      "duplex_mode": "auto",
+      "enabled": true,
+      "encapsulation": {
+        "encapsulation": "arpa"
+      },
+      "flow_control": {
+        "receive": false,
+        "send": false
+      },
+      "ipv4": {
+        "192.168.179.131/24": {
+          "ip": "192.168.179.131",
+          "prefix_length": "24",
+          "secondary": false
+        }
+      },
+      "mac_address": "5000.0002.0000",
+      "mtu": 1500,
+      "oper_status": "up",
+      "phys_address": "5000.0002.0000",
+      "port_channel": {
+        "port_channel_member": false
+      },
+      "port_speed": "auto speed",
+      "switchport_enable": false,
+      "type": "iGbE"
+    },
+    "GigabitEthernet0/1": {
+      "accounting": {
+        "arp": {
+          "chars_in": 660,
+          "chars_out": 1080,
+          "pkts_in": 11,
+          "pkts_out": 18
+        },
+        "cdp": {
+          "chars_in": 897906,
+          "chars_out": 899640,
+          "pkts_in": 2169,
+          "pkts_out": 2168
+        },
+        "dec mop": {
+          "chars_in": 0,
+          "chars_out": 15092,
+          "pkts_in": 0,
+          "pkts_out": 196
+        },
+        "ip": {
+          "chars_in": 1209119,
+          "chars_out": 1228866,
+          "pkts_in": 12706,
+          "pkts_out": 12869
+        },
+        "other": {
+          "chars_in": 0,
+          "chars_out": 700740,
+          "pkts_in": 0,
+          "pkts_out": 11679
+        }
+      },
+      "auto_negotiate": true,
+      "bandwidth": 1000000,
+      "counters": {
+        "in_broadcast_pkts": 61,
+        "in_crc_errors": 0,
+        "in_errors": 0,
+        "in_mac_pause_frames": 0,
+        "in_multicast_pkts": 0,
+        "in_octets": 2108375,
+        "in_pkts": 14888,
+        "last_clear": "never",
+        "out_errors": 0,
+        "out_mac_pause_frames": 0,
+        "out_octets": 2845418,
+        "out_pkts": 26930,
+        "rate": {
+          "in_rate": 0,
+          "in_rate_pkts": 0,
+          "load_interval": 300,
+          "out_rate": 0,
+          "out_rate_pkts": 0
+        }
+      },
+      "delay": 10,
+      "duplex_mode": "auto",
+      "enabled": true,
+      "encapsulation": {
+        "encapsulation": "arpa"
+      },
+      "flow_control": {
+        "receive": false,
+        "send": false
+      },
+      "ipv4": {
+        "192.168.11.2/24": {
+          "ip": "192.168.11.2",
+          "prefix_length": "24",
+          "secondary": false
+        }
+      },
+      "mac_address": "5000.0002.0001",
+      "mtu": 1500,
+      "oper_status": "up",
+      "phys_address": "5000.0002.0001",
+      "port_channel": {
+        "port_channel_member": false
+      },
+      "port_speed": "auto speed",
+      "switchport_enable": false,
+      "type": "iGbE"
+    },
+    "GigabitEthernet0/2": {
+      "accounting": {
+        "arp": {
+          "chars_in": 720,
+          "chars_out": 1200,
+          "pkts_in": 12,
+          "pkts_out": 20
+        },
+        "cdp": {
+          "chars_in": 891811,
+          "chars_out": 899221,
+          "pkts_in": 2155,
+          "pkts_out": 2167
+        },
+        "dec mop": {
+          "chars_in": 0,
+          "chars_out": 15092,
+          "pkts_in": 0,
+          "pkts_out": 196
+        },
+        "ip": {
+          "chars_in": 1208211,
+          "chars_out": 1211464,
+          "pkts_in": 12707,
+          "pkts_out": 12688
+        },
+        "other": {
+          "chars_in": 0,
+          "chars_out": 699360,
+          "pkts_in": 0,
+          "pkts_out": 11656
+        }
+      },
+      "auto_negotiate": true,
+      "bandwidth": 1000000,
+      "counters": {
+        "in_broadcast_pkts": 62,
+        "in_crc_errors": 0,
+        "in_errors": 0,
+        "in_mac_pause_frames": 0,
+        "in_multicast_pkts": 0,
+        "in_octets": 2101432,
+        "in_pkts": 14876,
+        "last_clear": "never",
+        "out_errors": 0,
+        "out_mac_pause_frames": 0,
+        "out_octets": 2826337,
+        "out_pkts": 26727,
+        "rate": {
+          "in_rate": 0,
+          "in_rate_pkts": 0,
+          "load_interval": 300,
+          "out_rate": 0,
+          "out_rate_pkts": 0
+        }
+      },
+      "delay": 10,
+      "duplex_mode": "auto",
+      "enabled": true,
+      "encapsulation": {
+        "encapsulation": "arpa"
+      },
+      "flow_control": {
+        "receive": false,
+        "send": false
+      },
+      "ipv4": {
+        "192.168.12.2/24": {
+          "ip": "192.168.12.2",
+          "prefix_length": "24",
+          "secondary": false
+        }
+      },
+      "mac_address": "5000.0002.0002",
+      "mtu": 1500,
+      "oper_status": "up",
+      "phys_address": "5000.0002.0002",
+      "port_channel": {
+        "port_channel_member": false
+      },
+      "port_speed": "auto speed",
+      "switchport_enable": false,
+      "type": "iGbE"
+    },
+    "GigabitEthernet0/3": {
+      "accounting": {
+        "arp": {
+          "chars_in": 600,
+          "chars_out": 1140,
+          "pkts_in": 10,
+          "pkts_out": 19
+        },
+        "cdp": {
+          "chars_in": 792552,
+          "chars_out": 898391,
+          "pkts_in": 2148,
+          "pkts_out": 2165
+        },
+        "dec mop": {
+          "chars_in": 0,
+          "chars_out": 15092,
+          "pkts_in": 0,
+          "pkts_out": 196
+        },
+        "ip": {
+          "chars_in": 1214783,
+          "chars_out": 1210944,
+          "pkts_in": 12629,
+          "pkts_out": 12722
+        },
+        "other": {
+          "chars_in": 0,
+          "chars_out": 699180,
+          "pkts_in": 0,
+          "pkts_out": 11653
+        }
+      },
+      "auto_negotiate": true,
+      "bandwidth": 1000000,
+      "counters": {
+        "in_broadcast_pkts": 118,
+        "in_crc_errors": 0,
+        "in_errors": 0,
+        "in_mac_pause_frames": 0,
+        "in_multicast_pkts": 0,
+        "in_octets": 2010005,
+        "in_pkts": 14793,
+        "last_clear": "never",
+        "out_errors": 0,
+        "out_mac_pause_frames": 0,
+        "out_octets": 2824747,
+        "out_pkts": 26755,
+        "rate": {
+          "in_rate": 0,
+          "in_rate_pkts": 0,
+          "load_interval": 300,
+          "out_rate": 0,
+          "out_rate_pkts": 0
+        }
+      },
+      "delay": 10,
+      "duplex_mode": "auto",
+      "enabled": true,
+      "encapsulation": {
+        "encapsulation": "arpa"
+      },
+      "flow_control": {
+        "receive": false,
+        "send": false
+      },
+      "ipv4": {
+        "192.168.13.2/24": {
+          "ip": "192.168.13.2",
+          "prefix_length": "24",
+          "secondary": false
+        }
+      },
+      "mac_address": "5000.0002.0003",
+      "mtu": 1500,
+      "oper_status": "up",
+      "phys_address": "5000.0002.0003",
+      "port_channel": {
+        "port_channel_member": false
+      },
+      "port_speed": "auto speed",
+      "switchport_enable": false,
+      "type": "iGbE"
+    }
+  },
+  "raw_data": false
+}

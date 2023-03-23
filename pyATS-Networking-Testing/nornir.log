@@ -1,0 +1,2143 @@
+2023-03-03 04:28:15,972 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 7 hosts
+2023-03-03 04:28:19,086 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2023-03-03 04:28:19,086 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:19,087 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2023-03-03 04:28:19,087 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:20,468 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:28:20,468 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:20,483 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:28:20,483 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:20,509 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:28:20,509 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:20,627 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:28:20,628 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:28:31,014 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2023-03-03 04:28:31,015 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:49,403 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 7 hosts
+2023-03-03 04:30:52,493 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2023-03-03 04:30:52,493 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:52,523 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2023-03-03 04:30:52,523 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:52,524 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 288, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2023-03-03 04:30:52,524 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:53,912 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:30:53,913 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:53,941 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:30:53,941 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:54,080 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:30:54,081 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:30:54,086 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:30:54,086 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:32:45,818 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 2 hosts
+2023-03-03 04:32:50,240 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:32:50,240 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:32:50,259 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-03-03 04:32:50,259 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_scp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/script1.py", line 8, in push_scp
+    task.run(task=send_configs_from_file, file="scp.txt")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2023-03-03 04:35:10,687 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 2 hosts
+2023-03-03 04:56:12,774 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-03 04:56:15,877 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/backupscript.py", line 14, in backup_config
+    pathlib.Path(config_directory).mkdir(exist=True)
+TypeError: Path.mkdir() got an unexpected keyword argument 'exist'
+
+2023-03-03 04:56:15,984 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/backupscript.py", line 14, in backup_config
+    pathlib.Path(config_directory).mkdir(exist=True)
+TypeError: Path.mkdir() got an unexpected keyword argument 'exist'
+
+2023-03-03 04:57:09,487 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-04 07:36:50,259 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:36:50,261 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: load_yaml() got an unexpected keyword argument 'filename'
+
+2023-03-04 07:36:50,261 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: load_yaml() got an unexpected keyword argument 'filename'
+
+2023-03-04 07:36:50,261 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 11, in load_vars
+    data = task.run(task=load_yaml, filename=f"./host_vars/{task.host}.yaml")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2023-03-04 07:36:50,261 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 11, in load_vars
+    data = task.run(task=load_yaml, filename=f"./host_vars/{task.host}.yaml")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2023-03-04 07:36:50,262 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:37:36,187 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:37:36,189 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 12, in load_vars
+    task.host["facts"] = data.results
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'results'
+
+2023-03-04 07:37:36,189 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 12, in load_vars
+    task.host["facts"] = data.results
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'results'
+
+2023-03-04 07:37:36,190 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:38:22,916 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:38:22,918 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:38:22,919 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    templates_results = task.run(task=template_file, template=f"{task.host}".j2, path="./templates")
+AttributeError: 'str' object has no attribute 'j2'
+
+2023-03-04 07:38:22,919 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    templates_results = task.run(task=template_file, template=f"{task.host}".j2, path="./templates")
+AttributeError: 'str' object has no attribute 'j2'
+
+2023-03-04 07:38:57,602 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:38:57,604 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:38:57,615 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuaration, replace=True)
+NameError: name 'configuaration' is not defined
+
+2023-03-04 07:38:57,616 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuaration, replace=True)
+NameError: name 'configuaration' is not defined
+
+2023-03-04 07:39:33,303 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:39:33,305 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:39:54,355 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:39:54,355 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:39:54,865 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:39:54,865 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:42:49,331 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:42:49,333 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:42:49,344 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 17, in replace_config
+    task.host["base_config"] = template_results.result
+NameError: name 'template_results' is not defined
+
+2023-03-04 07:42:49,344 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 17, in replace_config
+    task.host["base_config"] = template_results.result
+NameError: name 'template_results' is not defined
+
+2023-03-04 07:43:19,632 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:43:19,634 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:43:39,187 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:43:39,188 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:43:39,828 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:43:39,828 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:51:18,652 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-04 07:51:44,107 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:51:44,109 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:52:06,101 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:52:06,101 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:52:06,909 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:52:06,909 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:53:29,068 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:53:29,070 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 07:53:51,335 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:53:51,336 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:53:52,501 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 07:53:52,502 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 07:59:49,268 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-04 07:59:49,270 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-04 08:00:12,413 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 08:00:12,414 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-04 08:00:13,122 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-04 08:00:13,123 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:04:05,842 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-05 20:25:02,774 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:25:02,776 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:25:26,975 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 20:25:26,976 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:28:28,659 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:28:28,661 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:28:48,288 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 20:28:48,289 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:30:48,926 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:30:48,928 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:31:10,568 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 20:31:10,569 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:42:53,076 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:42:53,079 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:42:53,170 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 112, in top-level template code
+    network {{ network }}
+jinja2.exceptions.UndefinedError: 'network' is undefined
+
+2023-03-05 20:42:53,170 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R2.j2", line 109, in top-level template code
+    network {{ network }}
+jinja2.exceptions.UndefinedError: 'network' is undefined
+
+2023-03-05 20:42:53,170 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 20:42:53,171 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 20:43:57,514 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:43:57,516 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:43:57,528 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 112, in top-level template code
+    network {{ network }}
+jinja2.exceptions.UndefinedError: 'network' is undefined
+
+2023-03-05 20:43:57,529 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 20:44:19,582 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 20:44:19,583 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:44:41,136 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:44:41,138 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:45:00,618 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 20:45:00,619 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 20:58:45,437 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 20:58:45,440 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 20:58:45,507 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R2.j2", line 125, in template
+    {% for rule in host.facts.ACCESS_LISTS[acl]}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2023-03-05 20:58:45,508 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 20:58:45,508 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 128, in template
+    {% for rule in host.facts.ACCESS_LISTS[acl]}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2023-03-05 20:58:45,508 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 21:00:02,423 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 21:00:02,425 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 21:00:02,433 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 132, in template
+    {% endif }
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2023-03-05 21:00:02,434 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R2.j2", line 129, in template
+    {% endif }
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2023-03-05 21:00:02,434 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 21:00:02,434 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-05 21:01:11,373 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-05 21:01:11,375 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-05 21:01:35,608 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 21:01:35,608 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-05 21:01:36,639 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-05 21:01:36,639 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 04:48:53,610 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 04:48:53,613 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 04:48:53,622 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 150, in template
+    {% host.facts.NTP is defined %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'host'.
+
+2023-03-06 04:48:53,622 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R2.j2", line 147, in template
+    {% host.facts.NTP is defined %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'host'.
+
+2023-03-06 04:48:53,623 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-06 04:48:53,623 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-06 04:50:31,096 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 04:50:31,099 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 04:50:31,116 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R1.j2", line 151, in top-level template code
+    {% if host.facts.NTP.update_calendar == True%}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'update_calendar'
+
+2023-03-06 04:50:31,116 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/R2.j2", line 148, in top-level template code
+    {% if host.facts.NTP.update_calendar == True%}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'update_calendar'
+
+2023-03-06 04:50:31,117 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-06 04:50:31,117 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 16, in replace_config
+    template_results = task.run(task=template_file, template=f"{task.host}.j2", path="./templates")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-03-06 04:51:55,807 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 04:51:55,810 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 04:52:18,195 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 04:52:18,196 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 04:52:19,261 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 04:52:19,262 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 05:06:30,369 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 05:06:30,371 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 05:06:52,930 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 05:06:52,931 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 05:11:26,449 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 05:11:26,452 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 05:11:47,432 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 05:11:47,433 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 05:14:49,000 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 3 hosts
+2023-03-06 05:15:43,397 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2023-03-06 05:17:41,957 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2023-03-06 05:22:43,954 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2023-03-06 05:26:27,488 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 05:26:27,592 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './host_vars/R3.yaml'
+
+2023-03-06 05:26:27,593 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 11, in load_vars
+    data = task.run(task=load_yaml, file=f"./host_vars/{task.host}.yaml")
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2023-03-06 05:26:27,593 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 05:29:54,811 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 05:29:54,814 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 05:30:16,069 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 05:30:16,069 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 20:46:33,389 -  nornir.core -     INFO -        run() - Running task 'push_scp' with args {} on 2 hosts
+2023-03-06 20:46:51,777 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-06 20:52:58,238 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 2 hosts
+2023-03-06 21:01:27,081 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 21:01:27,083 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 21:01:50,803 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 21:01:50,804 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 21:01:50,929 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 21:01:50,930 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/replacer.py", line 19, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 21:42:51,352 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 2 hosts
+2023-03-06 21:42:51,355 -  nornir.core -     INFO -        run() - Running task 'replace_config' with args {} on 2 hosts
+2023-03-06 21:43:10,849 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 21:43:10,850 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/network-tester.py", line 21, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2023-03-06 21:43:12,799 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/netmiko/base_connection.py", line 1721, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-03-06 21:43:12,799 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'replace_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/test/network-tester.py", line 21, in replace_config
+    task.run(task=napalm_configure, configuration=configuration, replace=True)
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+

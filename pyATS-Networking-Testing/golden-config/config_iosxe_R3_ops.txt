@@ -1,0 +1,98 @@
+{
+  "Building configuration...": {},
+  "Current configuration : 1992 bytes": {},
+  "archive": {
+    "path flash:archive": {},
+    "write-memory": {}
+  },
+  "boot-end-marker": {},
+  "boot-start-marker": {},
+  "control-plane": {},
+  "end": {},
+  "hostname R3": {},
+  "interface GigabitEthernet0/0": {
+    "duplex auto": {},
+    "ip address 192.168.179.132 255.255.255.0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/1": {
+    "duplex auto": {},
+    "ip address 192.168.10.3 255.255.255.0": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/2": {
+    "duplex auto": {},
+    "ip address 192.168.11.3 255.255.255.0": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/3": {
+    "duplex auto": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "no ip address": {},
+    "shutdown": {},
+    "speed auto": {}
+  },
+  "ip access-list extended ACL1": {
+    "deny   icmp any any": {},
+    "permit ip host 3.3.3.3 host 2.2.2.2": {}
+  },
+  "ip access-list extended ACL2": {
+    "deny   ip any host 5.5.5.5": {},
+    "permit icmp host 10.10.10.10 any": {},
+    "permit tcp host 6.5.4.1 any eq 22": {}
+  },
+  "ip cef": {},
+  "ip domain name cisco.com": {},
+  "ip forward-protocol nd": {},
+  "ip scp server enable": {},
+  "ip ssh version 2": {},
+  "ipv6 ioam timestamp": {},
+  "line aux 0": {},
+  "line con 0": {
+    "exec-timeout 0 0": {}
+  },
+  "line vty 0 4": {
+    "exec-timeout 0 0": {},
+    "login local": {},
+    "transport input ssh": {}
+  },
+  "mmi polling-interval 60": {},
+  "mmi snmp-timeout 180": {},
+  "multilink bundle-name authenticated": {},
+  "no aaa new-model": {},
+  "no ip http secure-server": {},
+  "no ip http server": {},
+  "no ipv6 cef": {},
+  "no logging console": {},
+  "no mmi auto-configure": {},
+  "no mmi pvc": {},
+  "no scheduler allocate": {},
+  "no service password-encryption": {},
+  "ntp server 2.2.2.2 prefer": {},
+  "ntp server 22.22.22.22": {},
+  "ntp server 8.8.8.8": {},
+  "ntp update-calendar": {},
+  "redundancy": {},
+  "router ospf 1": {},
+  "router ospf 2": {
+    "network 10.0.0.0 0.0.0.0 area 2": {},
+    "network 2.2.2.2 0.0.0.0 area 0": {},
+    "redistribute connected subnets": {},
+    "redistribute eigrp 22 subnets": {},
+    "router-id 2.2.2.2": {}
+  },
+  "service timestamps debug datetime msec": {},
+  "service timestamps log datetime msec": {},
+  "username ray privilege 15 secret 9 $9$Hpknw/Nl4f9xhP$vtgk8YZ1dBKVLQqFHHbWZgEgOZ5ZBdXJJ.mTlho1FiY": {},
+  "version 15.9": {},
+  "vrf definition MGMT": {
+    "address-family ipv4": {},
+    "exit-address-family": {}
+  }
+}

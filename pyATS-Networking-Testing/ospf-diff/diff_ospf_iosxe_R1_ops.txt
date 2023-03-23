@@ -1,0 +1,28 @@
+--- ospf-before/ospf_iosxe_R1_ops.txt
++++ ospf-after/ospf_iosxe_R1_ops.txt
+ info:
+  vrf:
+   default:
+    address_family:
+     ipv4:
+      instance:
+       1:
+        areas:
+         0.0.0.0:
+          interfaces:
+           GigabitEthernet0/2:
+-           enable: True
++           enable: False
+-           lls: True
+-           neighbors:
+-            4.4.4.4:
+-             address: 192.168.9.2
+-             bdr_ip_addr: 192.168.9.1
+-             dead_timer: 00:00:37
+-             dr_ip_addr: 192.168.9.2
+-             neighbor_router_id: 4.4.4.4
+-             state: full
+-             statistics:
+-              nbr_event_count: 6
+-              nbr_retrans_qlen: 0
+-           passive: False
