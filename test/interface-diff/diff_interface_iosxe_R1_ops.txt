@@ -1,0 +1,34 @@
+--- interface-before/interface_iosxe_R1_ops.txt
++++ interface-after/interface_iosxe_R1_ops.txt
+ info:
+  GigabitEthernet0/2:
+-  enabled: True
++  enabled: False
+-  oper_status: up
++  oper_status: down
+-  accounting:
+-   arp:
+-    chars_in: 660
+-    chars_out: 1200
+-    pkts_in: 11
+-    pkts_out: 20
+-   cdp:
+-    chars_in: 897096
+-    chars_out: 806624
+-    pkts_in: 2167
+-    pkts_out: 2182
+-   dec mop:
+-    chars_in: 0
+-    chars_out: 15015
+-    pkts_in: 0
+-    pkts_out: 195
+-   ip:
+-    chars_in: 1219438
+-    chars_out: 1212925
+-    pkts_in: 12835
+-    pkts_out: 12699
+-   other:
+-    chars_in: 0
+-    chars_out: 699180
+-    pkts_in: 0
+-    pkts_out: 11653

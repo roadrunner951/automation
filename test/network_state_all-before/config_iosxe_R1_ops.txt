@@ -1,0 +1,82 @@
+{
+  "* Cisco in writing.                                                      *": {},
+  "* IOSv is strictly limited to use for evaluation, demonstration and IOS  *": {},
+  "* Technical Advisory Center. Any use or disclosure, in whole or in part, *": {},
+  "* education. IOSv is provided as-is and is not supported by Cisco's      *": {},
+  "* of the IOSv Software or Documentation to any third party for any       *": {},
+  "* purposes is expressly prohibited except as otherwise authorized by     *": {},
+  "**************************************************************************": {},
+  "**************************************************************************^C": {},
+  "Building configuration...": {},
+  "Current configuration : 3291 bytes": {},
+  "banner exec ^C": {},
+  "banner incoming ^C": {},
+  "banner login ^C": {},
+  "boot-end-marker": {},
+  "boot-start-marker": {},
+  "control-plane": {},
+  "end": {},
+  "hostname R1": {},
+  "interface GigabitEthernet0/0": {
+    "duplex auto": {},
+    "ip address 192.168.179.130 255.255.255.0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/1": {
+    "duplex auto": {},
+    "ip address 192.168.10.1 255.255.255.0": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/2": {
+    "duplex auto": {},
+    "ip address 192.168.9.1 255.255.255.0": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "shutdown": {},
+    "speed auto": {}
+  },
+  "interface GigabitEthernet0/3": {
+    "duplex auto": {},
+    "ip address 192.168.8.1 255.255.255.0": {},
+    "ip ospf 1 area 0": {},
+    "media-type rj45": {},
+    "speed auto": {}
+  },
+  "ip cef": {},
+  "ip domain name cisco.com": {},
+  "ip forward-protocol nd": {},
+  "ip ssh version 2": {},
+  "ipv6 ioam timestamp": {},
+  "line aux 0": {},
+  "line con 0": {},
+  "line vty 0 4": {
+    "login local": {},
+    "transport input ssh": {}
+  },
+  "mmi polling-interval 60": {},
+  "mmi snmp-timeout 180": {},
+  "multilink bundle-name authenticated": {},
+  "no aaa new-model": {},
+  "no ip http secure-server": {},
+  "no ip http server": {},
+  "no ipv6 cef": {},
+  "no mmi auto-configure": {},
+  "no mmi pvc": {},
+  "no scheduler allocate": {},
+  "no service password-encryption": {},
+  "redundancy": {},
+  "router ospf 1": {
+    "router-id 1.1.1.1": {}
+  },
+  "service timestamps debug datetime msec": {},
+  "service timestamps log datetime msec": {},
+  "username ray privilege 15 secret 9 $9$w7OCngQoWVwcvP$g053y4L.UpFgd4b9arqO4dVIncj5RA4PcD0FZDreB2g": {},
+  "version 15.9": {},
+  "vrf definition MGMT": {
+    "address-family ipv4": {},
+    "exit-address-family": {}
+  }
+}

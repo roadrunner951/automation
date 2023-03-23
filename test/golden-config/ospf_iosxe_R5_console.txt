@@ -1,0 +1,5 @@
++++ Reconnecting +++
+ssh: connect to host 192.168.179.134 port 22: No route to host
+
++++ connection to spawn: ssh -l ray 192.168.179.134, id: 140034408833248 +++
+connection to R5

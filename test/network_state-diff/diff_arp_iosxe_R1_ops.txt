@@ -1,0 +1,15 @@
+--- network_state_all-before/arp_iosxe_R1_ops.txt
++++ network_state_all-after/arp_iosxe_R1_ops.txt
+ info:
+  interfaces:
+   GigabitEthernet0/0:
+    ipv4:
+     neighbors:
++     192.168.179.2:
++      ip: 192.168.179.2
++      link_layer_address: 0050.56f8.e80d
++      origin: dynamic
++  Loopback77:
++   arp_dynamic_learning:
++    local_proxy_enable: False
++    proxy_enable: True

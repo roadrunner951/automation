@@ -1,0 +1,66 @@
+devices:
+  R1:
+    connections:
+      cli:
+        ip: 192.168.179.130
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: ray
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  R2:
+    connections:
+      cli:
+        ip: 192.168.179.131
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: ray
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  R3:
+    connections:
+      cli:
+        ip: 192.168.179.132
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: ray
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  R4:
+    connections:
+      cli:
+        ip: 192.168.179.133
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: ray
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe
+  R5:
+    connections:
+      cli:
+        ip: 192.168.179.134
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: ray
+      enable:
+        password: '%ASK{}'
+    os: iosxe
+    type: iosxe

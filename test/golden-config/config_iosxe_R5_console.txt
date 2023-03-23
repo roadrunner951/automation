@@ -1,0 +1,48 @@
++++ Reconnecting +++
+ssh: connect to host 192.168.179.134 port 22: No route to host
+
++++ connection to spawn: ssh -l ray 192.168.179.134, id: 140034516310560 +++
+connection to R5
+Caught error while executing target in child process-4:
+  target = _retrieve_ops
+  args = (<Device R5 at 0x7f5c54da0400>, 'config', 'golden-config')
+  kwargs = {}
+
+Traceback (most recent call last):
+  File "src/unicon/eal/backend/pty_backend.py", line 496, in unicon.eal.backend.pty_backend.RawPtySpawn._read
+OSError: [Errno 5] Input/output error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/unicon/statemachine/statemachine.py", line 737, in unicon.statemachine.statemachine.StateMachine.go_to
+  File "src/unicon/statemachine/statetransition.py", line 469, in unicon.statemachine.statetransition.AnyStateTransition.do_transitions
+  File "src/unicon/eal/backend/pty_backend.py", line 340, in unicon.eal.backend.pty_backend.RawSpawn.expect
+  File "src/unicon/eal/backend/pty_backend.py", line 133, in unicon.eal.backend.pty_backend.RawSpawn.read_update_buffer
+  File "src/unicon/eal/backend/pty_backend.py", line 118, in unicon.eal.backend.pty_backend.RawSpawn.read
+  File "src/unicon/eal/backend/pty_backend.py", line 499, in unicon.eal.backend.pty_backend.RawPtySpawn._read
+unicon.core.errors.EOF: ('Unable to read. Connection closed or not available', OSError(5, 'Input/output error'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/unicon/bases/connection.py", line 784, in unicon.bases.connection.Connection.connect
+  File "src/unicon/bases/routers/connection_provider.py", line 227, in unicon.bases.routers.connection_provider.BaseSingleRpConnectionProvider.connect
+  File "src/unicon/bases/routers/connection_provider.py", line 253, in unicon.bases.routers.connection_provider.BaseSingleRpConnectionProvider.establish_connection
+  File "src/unicon/statemachine/statemachine.py", line 740, in unicon.statemachine.statemachine.StateMachine.go_to
+unicon.core.errors.StateMachineError: Failed while bringing device to "any" state
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/pyats/async_/parallelcall.py", line 90, in pyats.async_.parallelcall.ChildLabor.run
+  File "src/genie/cli/commands/learn.py", line 312, in genie.cli.commands.learn.LearnCommand._retrieve_ops
+  File "src/genie/conf/base/api.py", line 189, in genie.conf.base.api.API.__getattr__.wrapper_match
+  File "src/genie/conf/base/api.py", line 187, in genie.conf.base.api.API.__getattr__.wrapper_match
+  File "/home/ipvzero/Nornir/pyATS-Network-Testing/lib/python3.10/site-packages/genie/libs/sdk/apis/iosxe/running_config/get.py", line 49, in get_running_config_dict
+    out = device.execute(cmd)
+  File "src/unicon/bases/routers/services.py", line 258, in unicon.bases.routers.services.BaseService.__call__
+  File "src/unicon/bases/routers/services.py", line 165, in unicon.bases.routers.services.BaseService.pre_service
+  File "src/unicon/bases/connection.py", line 791, in unicon.bases.connection.Connection.connect
+unicon.core.errors.ConnectionError: failed to connect to R5
+Failed while bringing device to "any" state
