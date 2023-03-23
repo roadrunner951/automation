@@ -1,0 +1,136 @@
+!
+
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition MGMT
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name cisco.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+file prompt quiet
+username ray privilege 15 secret 9 $9$PO7KnHNZzDqY9v$DOCcjmHZ/wzMReIgRDNcCytnTtcVozZjgWBQOE34rwI
+username lauren privilege 15 secret 9 $9$w88t1/AtfvIdR6$Z8jtXriYREGJlPOOx/ewumkfakYsCnyD8nqxPh8cPUE
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet0/0
+ description mgmt_interface
+ ip address 10.0.0.2 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.0.0.10 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ vrf forwarding MGMT
+ ip address 192.168.179.132 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip ssh version 2
+ip scp server enable
+!
+logging host 99.99.99.99
+logging host 1.55.66.3
+ipv6 ioam timestamp
+!
+snmp-server community IPvZero RO
+snmp-server community CBTNUGGETS RO
+snmp-server community RANDOMTEST RO
+snmp-server chassis-id 
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+!
+no scheduler allocate
+ntp server 5.6.7.8
+ntp server 55.66.11.33
+ntp server 55.66.55.66
+ntp server 11.11.11.11
+ntp server 88.99.55.12
+ntp server 77.77.77.77
+ntp server 34.44.66.21
+ntp server 11.22.11.22
+!
+end

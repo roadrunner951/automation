@@ -1,0 +1,6 @@
+---
+
+platform: 'ios'
+username: "ray" 
+password: "cisco"
+groups: "cisco_group"

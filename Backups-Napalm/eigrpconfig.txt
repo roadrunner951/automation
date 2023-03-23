@@ -1,0 +1,6 @@
+no router eigrp 1
+router eigrp 1
+net 10.0.0.0 0.0.0.3
+net 10.0.0.4 0.0.0.3
+net 1.1.1.1 0.0.0.0
+passive-interface loo0
