@@ -1,0 +1,65 @@
+---
+
+R1:
+    hostname: 192.168.179.130
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group
+
+R2:
+    hostname: 192.168.179.131
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group 
+
+R3:
+    hostname: 192.168.179.132
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group
+
+R4:
+    hostname: 192.168.179.133
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group
+
+
+R5:
+    hostname: 192.168.179.134
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group
+
+R6:
+    hostname: 192.168.179.135 
+    username: "ray"
+    password: "cisco"
+    port: 22
+    groups:
+        - cisco_group
+
+R7:
+    hostname: 192.168.179.136
+    username: "ray"
+    password: "arista"
+    port: 22
+    groups:
+        - arista_group
+R8:
+    hostname: 192.168.179.137
+    username: "ray"
+    password: "arista"
+    port: 22
+    groups:
+        - arista_group

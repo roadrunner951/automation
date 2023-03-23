@@ -1,0 +1,186 @@
+2023-02-26 20:33:41,743 -  nornir.core -     INFO -        run() - Running task 'get_test' with args {} on 1 hosts
+2023-02-26 20:44:48,248 -  nornir.core -     INFO -        run() - Running task 'vlaidate_test' with args {} on 1 hosts
+2023-02-26 20:46:04,741 -  nornir.core -     INFO -        run() - Running task 'vlaidate_test' with args {} on 1 hosts
+2023-02-26 20:51:49,908 -  nornir.core -     INFO -        run() - Running task 'get_test' with args {} on 1 hosts
+2023-02-26 21:08:16,899 -  nornir.core -     INFO -        run() - Running task 'get_test' with args {} on 4 hosts
+2023-02-26 21:08:17,421 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 449, in connect
+    self._auth(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 781, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1099, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: 
+A paramiko SSHException occurred during connection creation:
+
+No authentication methods available
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.179.133
+
+2023-02-26 21:08:17,421 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 449, in connect
+    self._auth(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 781, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1099, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: 
+A paramiko SSHException occurred during connection creation:
+
+No authentication methods available
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.179.131
+
+2023-02-26 21:08:17,422 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'get_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Napalm/get_facts.py", line 8, in get_test
+    task.run(task=napalm_get, getters=["get_facts"])
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-02-26 21:08:17,422 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Napalm/get_facts.py", line 8, in get_test
+    task.run(task=napalm_get, getters=["get_facts"])
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-02-26 21:08:17,422 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 449, in connect
+    self._auth(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/paramiko/client.py", line 781, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 1099, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: 
+A paramiko SSHException occurred during connection creation:
+
+No authentication methods available
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/napalm/base/base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.179.132
+
+2023-02-26 21:08:17,423 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Napalm/get_facts.py", line 8, in get_test
+    task.run(task=napalm_get, getters=["get_facts"])
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2023-02-26 21:09:43,289 -  nornir.core -     INFO -        run() - Running task 'get_test' with args {} on 4 hosts

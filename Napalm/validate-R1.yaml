@@ -1,0 +1,18 @@
+---
+
+
+- get_facts:
+   fqdn: R1.cisco.com
+   hostname: R1
+   interface_list:
+   - GigabitEthernet0/0
+   - GigabitEthernet0/1
+   - GigabitEthernet0/2
+   - GigabitEthernet0/3
+   - Loopback0
+   model: IOSv
+   os_version: IOSv Software (VIOS-ADVENTERPRISEK9-M), Version 15.9(3)M3, RELEASE SOFTWARE
+     (fc1)
+   serial_number: 9AGYLEFO9KRQBQ51JLRPA
+   uptime: ">500"
+   vendor: Cisco

@@ -1,0 +1,71 @@
+---
+
+R1:
+    hostname: 192.168.179.130
+    groups:
+        - cisco_group
+    #data:
+    #    location: "Texas"
+    #    layer: "Core"
+    #    contact: "TexasAdministrtor@streamlineitg.com"
+    #    ASN: "65001"
+
+#R2:
+#    hostname: 192.168.179.131
+#    groups:
+#        - cisco_group 
+#    data:
+#        location: "California"
+#        layer: "Core"
+#        contact: "CaliforniaAdministrtor@streamlineitg.com"
+#        ASN: "65004"
+
+R2:
+    hostname: 192.168.179.131
+    groups:
+        - cisco_group
+#    data:
+#        location: "New York"
+#        layer: "Distribution"
+#        contact: "NewYorkAdministrtor@streamlineitg.com"
+#        ASN: "65001"
+
+#R4:
+#    hostname: 192.168.179.133
+#    groups:
+#        - cisco_group
+#    data:
+#        location: "Florida"
+#        layer: "Branch"
+#        contact: "FloridaAdministrtor@streamlineitg.com"
+#        ASN: "65001"
+
+#R5:
+#    hostname: 192.168.179.134
+#    groups:
+#        - cisco_group
+#    data:
+#        location: "Central"
+#        layer: "Core"
+#        contact: "CentralAdministrtor@streamlineitg.com"
+#        ASN: "65001"
+
+#R6:
+#    hostname: 192.168.179.135 
+#    groups:
+#        - cisco_group
+#    data:
+#        location: "Central"
+#        layer: "Core"
+#        contact: "CentralAdministrtor@streamlineitg.com"
+#        ASN: "65001"
+
+#R7:
+#    hostname: 192.168.179.136
+#    groups:
+#        - cisco_group
+#    data:
+#        location: "California"
+#        layer: "Branch"
+#        contact: "CaliforniaAdministrtor@streamlineitg.com"
+#        ASN: "65004"

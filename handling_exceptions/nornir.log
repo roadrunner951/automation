@@ -1,0 +1,263 @@
+2023-02-11 07:47:11,365 -  nornir.core -     INFO -        run() - Running task 'get_routing_info' with args {} on 3 hosts
+2023-02-11 07:47:16,114 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:16,115 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:47:16,167 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:16,168 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:47:16,214 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:16,214 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:47:31,290 -  nornir.core -     INFO -        run() - Running task 'get_routing_info' with args {} on 3 hosts
+2023-02-11 07:47:35,709 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:35,709 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:47:35,716 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:35,716 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:47:35,724 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-11 07:47:35,724 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 9, in get_routing_info
+    show_result = task.run(task=send_command, command="show ip route")
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-11 07:48:10,304 -  nornir.core -     INFO -        run() - Running task 'get_routing_info' with args {} on 3 hosts
+2023-02-11 07:48:20,673 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 17, in get_routing_info
+    next_hop_list = routes[key]['next_hop']['next_hop_list']
+KeyError: 'next_hop_list'
+
+2023-02-11 07:48:20,673 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 17, in get_routing_info
+    next_hop_list = routes[key]['next_hop']['next_hop_list']
+KeyError: 'next_hop_list'
+
+2023-02-11 07:48:21,163 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'get_routing_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/handling_exceptions/runbook1-show_ip_route-next_hop-next_hop_list.py", line 17, in get_routing_info
+    next_hop_list = routes[key]['next_hop']['next_hop_list']
+KeyError: 'next_hop_list'
+
+2023-02-11 07:59:57,148 -  nornir.core -     INFO -        run() - Running task 'get_routing_info' with args {} on 3 hosts
+2023-02-11 08:00:27,065 -  nornir.core -     INFO -        run() - Running task 'get_routing_info' with args {} on 3 hosts

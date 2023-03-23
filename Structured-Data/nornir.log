@@ -1,0 +1,1492 @@
+2023-02-03 06:27:57,519 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-03 06:28:02,114 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:28:02,114 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:28:02,126 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:28:02,127 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:28:02,264 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:28:02,264 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:28:02,276 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:28:02,276 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:29:22,490 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-03 06:29:27,045 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:29:27,045 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:29:27,069 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:29:27,069 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:29:27,194 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:29:27,194 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:29:27,195 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:29:27,196 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:30:17,516 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-03 06:30:22,095 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:30:22,095 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:30:22,201 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:30:22,201 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:30:22,263 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:30:22,263 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:30:22,288 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 105, in open
+    connection.open()
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 88, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 300, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-03 06:30:22,288 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 9, in test_this
+    task.run(task=send_command, command="show clock")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-03 06:31:02,576 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:10:46,412 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:10:47,450 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:10:47,579 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:10:47,895 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:10:47,979 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:11:13,660 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:11:14,867 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:11:14,997 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:11:15,018 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:11:15,100 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 16, in test_this
+    structured_output = clock_results.scrapli_response.text_parse_output()
+AttributeError: 'Response' object has no attribute 'text_parse_output'
+
+2023-02-04 05:11:49,338 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:12:43,651 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:13:01,885 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:13:26,396 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:13:27,595 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 15, in test_this
+    clock_results = task.run(task=send_command, command="show ip description")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-04 05:13:27,739 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 15, in test_this
+    clock_results = task.run(task=send_command, command="show ip description")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-04 05:13:27,912 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 15, in test_this
+    clock_results = task.run(task=send_command, command="show ip description")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-04 05:13:27,943 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook1-send-cmd_TextFSM.PY", line 15, in test_this
+    clock_results = task.run(task=send_command, command="show ip description")
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-04 05:14:03,168 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:26:02,956 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:27:36,287 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:47:34,584 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:54:03,409 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 05:55:39,375 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 06:01:02,030 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 06:01:02,031 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook4-netmiko-send-cmd-genie.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command_string="show ip interface", use_genie=True)
+NameError: name 'send_command' is not defined
+
+2023-02-04 06:01:02,031 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook4-netmiko-send-cmd-genie.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command_string="show ip interface", use_genie=True)
+NameError: name 'send_command' is not defined
+
+2023-02-04 06:01:02,031 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook4-netmiko-send-cmd-genie.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command_string="show ip interface", use_genie=True)
+NameError: name 'send_command' is not defined
+
+2023-02-04 06:01:02,031 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'test_this' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook4-netmiko-send-cmd-genie.py", line 16, in test_this
+    interfaces_result = task.run(task=send_command, command_string="show ip interface", use_genie=True)
+NameError: name 'send_command' is not defined
+
+2023-02-04 06:01:23,365 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 06:01:37,445 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 06:03:06,654 -  nornir.core -     INFO -        run() - Running task 'test_this' with args {} on 4 hosts
+2023-02-04 07:04:04,650 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:16:32,053 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:16:34,145 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime}")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:16:34,187 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime}")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:16:34,596 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime}")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:16:34,597 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime}")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:17:47,654 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:17:49,518 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:17:49,670 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:17:49,696 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:17:49,789 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:20:54,457 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:22:57,906 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:23:00,169 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:23:00,170 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:23:00,199 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:23:00,402 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:23:46,797 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:24:15,003 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:25:51,881 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 07:25:53,879 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:25:53,888 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:25:53,892 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:25:54,019 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_interfaces_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook7-napalam-getters-parsedata-multivendor.py", line 23, in pull_interfaces_info
+    rpint(f"{task.host} is a [yellow]Cisco[/yellow] device (uptime {uptime})")
+NameError: name 'rpint' is not defined
+
+2023-02-04 07:26:50,188 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-04 08:53:45,276 -  nornir.core -     INFO -        run() - Running task 'pull_interfaces_info' with args {} on 4 hosts
+2023-02-05 07:23:26,754 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:23:27,085 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:23:27,086 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:23:27,086 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:23:27,090 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:02,825 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:25:02,905 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:02,906 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:02,927 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:02,927 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:15,138 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:25:15,235 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:15,236 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:15,254 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:15,254 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:21,847 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:25:21,987 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:21,987 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:25:21,988 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:25:21,988 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:26:27,441 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:26:27,533 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:26:27,534 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:26:27,553 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:26:27,553 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 11, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:29:25,076 -  nornir.core -     INFO -        run() - Running task 'test_restconf' with args {} on 2 hosts
+2023-02-05 07:29:25,186 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:29:25,187 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 12, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
+2023-02-05 07:29:25,207 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'http_method' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 253, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 112, in handle_request
+    raise exc
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir_http/tasks.py", line 31, in http_method
+    response = httpx.request(method, url, **kwargs)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_api.py", line 100, in request
+    return client.request(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 821, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 217, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+2023-02-05 07:29:25,208 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'test_restconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/Nornir/Structured-Data/runbook12-restconf-http_method.py", line 12, in test_restconf
+    response = task.run(task=http_method, method="get", verify=False, auth=(f"{task.host.username}", f"{task.host.password}"), headers=headers, url=f"http://{task.host.hostname}:443/restconf/data/native/router", )
+  File "/home/ipvzero/Nornir/Structured-Data/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: http_method (failed)
+
+
