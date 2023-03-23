@@ -1,6 +1,0 @@
---- network_state_all-before/config_iosxe_R1_ops.txt
-+++ network_state_all-after/config_iosxe_R1_ops.txt
-+Current configuration : 3354 bytes:
-+interface Loopback77:
-+ ip address 77.77.77.77 255.255.255.255:
--Current configuration : 3291 bytes:
