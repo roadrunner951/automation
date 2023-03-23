@@ -1,2 +1,0 @@
-2023-02-12 06:52:19,481 -  nornir.core -     INFO -        run() - Running task 'banner_push' with args {} on 4 hosts
-2023-02-12 06:56:23,757 -  nornir.core -     INFO -        run() - Running task 'banner_push' with args {} on 1 hosts

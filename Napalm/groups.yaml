@@ -1,8 +1,0 @@
----
-
-cisco_group:
-    platform: "ios" 
-
-north: {}
-
-south: {}
