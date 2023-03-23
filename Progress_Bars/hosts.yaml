@@ -1,0 +1,43 @@
+---
+
+R1:
+    hostname: "192.168.179.130"
+    platform: "ios"
+    groups:
+#        - cisco_group
+
+R2:
+    hostname: "192.168.179.131"
+    platform: "ios"
+    groups:
+#        - cisco_group
+
+R3:
+    hostname: "192.168.179.132"
+    platform: "ios"
+    groups:
+#        - cisco_group
+
+R4: 
+    hostname: "192.168.179.133"
+    platform: "ios"
+    groups:
+#        - cisco_group
+
+R5:
+    hostname: "192.168.179.134"
+    platform: "ios"
+    groups:
+#        - cisco_group
+
+R6:
+    hostname: "192.168.179.135"
+    groups:
+    platform: "ios"
+#        - cisco_group
+
+R7:
+    hostname: "192.168.179.136"
+    platform: "ios"
+    groups:
+#        - cisco_group
