@@ -1,5 +1,0 @@
-Interface                  IP-Address      OK? Method Status                Protocol
-GigabitEthernet0/0         192.168.179.132 YES manual up                    up
-GigabitEthernet0/1         192.168.10.3    YES manual up                    up
-GigabitEthernet0/2         192.168.11.3    YES manual up                    up
-GigabitEthernet0/3         unassigned      YES unset  administratively down down
